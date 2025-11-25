@@ -1,0 +1,10 @@
+SELECT
+  pickup_zone,
+  countif(is_outlier_duration) AS total_duration_outliers,
+  countif(is_outlier_fare) AS total_fare_outliers,
+  countif(is_outlier_speed) AS total_speed_outliers,
+FROM `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+WHERE
+  pickup_zone is not null
+group by pickup_zone
+order by total_fare_outliers desc
