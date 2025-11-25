@@ -1,0 +1,9 @@
+SELECT
+  distance_bucket,
+  avg(total_amount) as avg_total_fare
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+where
+  is_outlier_fare is false
+group by distance_bucket
+order by avg_total_fare desc
