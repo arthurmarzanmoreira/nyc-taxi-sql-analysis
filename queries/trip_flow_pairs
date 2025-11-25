@@ -1,0 +1,11 @@
+SELECT
+  pickup_zone,
+  dropoff_zone,
+  count(*) as total_count
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+where
+  pickup_zone is not null
+  AND dropoff_zone is not null
+group by pickup_zone, dropoff_zone
+order by total_count desc
