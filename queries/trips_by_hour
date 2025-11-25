@@ -1,0 +1,6 @@
+SELECT 
+  pickup_hour,
+  count(*) as total_trips
+FROM `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+group by pickup_hour
+order by pickup_hour
