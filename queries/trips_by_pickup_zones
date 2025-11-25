@@ -1,0 +1,10 @@
+SELECT
+  pickup_zone,
+  pickup_borough,
+  count(*) as total_trips
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips` 
+where 
+  pickup_zone is not null
+group by pickup_zone, pickup_borough
+order by total_trips desc
