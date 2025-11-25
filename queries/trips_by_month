@@ -1,0 +1,7 @@
+SELECT  
+  pickup_month,
+  count(*) as total_trips
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+group by pickup_month
+order by pickup_month
