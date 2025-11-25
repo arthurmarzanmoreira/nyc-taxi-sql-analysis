@@ -1,0 +1,10 @@
+SELECT
+  pickup_hour,
+  avg(tip_percent) as avg_tip_percent
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+where
+  is_outlier_fare is false
+group by pickup_hour
+order by pickup_hour desc
+limit 25
