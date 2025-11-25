@@ -1,0 +1,6 @@
+SELECT 
+  pickup_weekday,
+  count(*) as total_trips
+FROM `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips`
+group by pickup_weekday
+order by pickup_weekday
