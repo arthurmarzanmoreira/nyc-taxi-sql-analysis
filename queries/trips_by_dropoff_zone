@@ -1,0 +1,11 @@
+SELECT
+  dropoff_zone,
+  dropoff_borough,
+  count(*) as total_trips
+FROM 
+  `sql-nyc-mobility-analysis.mobilty_analysis.cleaned_taxi_trips` 
+where 
+  dropoff_zone is not null
+group by dropoff_zone, dropoff_borough
+order by total_trips desc
+LIMIT 10
